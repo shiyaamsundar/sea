@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'bottom_bar.dart';
 import 'cookie_page.dart';
 import 'login.dart';
+import 'notifications.dart';
+import 'cart.dart';
+import 'startscreen.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,7 +12,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home:SplashScreen(),
     );
   }
 }
@@ -26,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage>
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 1, vsync: this);
+    _tabController = TabController(length: 3, vsync: this);
   }
 
   @override
@@ -36,10 +39,10 @@ class _MyHomePageState extends State<MyHomePage>
         backgroundColor: Colors.white,
         elevation: 0.0,
         centerTitle: true,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Color(0xFF545D68)),
-          onPressed: () {},
-        ),
+//        leading: IconButton(
+//          icon: Icon(Icons.arrow_back, color: Color(0xFF545D68)),
+//          onPressed: () {},
+//        ),
         title: Text('Sea_Food',
             style: TextStyle(
                 fontFamily: 'Varela',
@@ -48,7 +51,12 @@ class _MyHomePageState extends State<MyHomePage>
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.notifications_none, color: Color(0xFF545D68)),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Notifications()),
+              );
+            },
           ),
         ],
       ),
@@ -77,6 +85,20 @@ class _MyHomePageState extends State<MyHomePage>
                         fontSize: 21.0,
                       )),
                 ),
+                Tab(
+                  child: Text('Prawns',
+                      style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 21.0,
+                      )),
+                ),
+                Tab(
+                  child: Text('sharks',
+                      style: TextStyle(
+                        fontFamily: 'Varela',
+                        fontSize: 21.0,
+                      )),
+                ),
 
               ]),
           Container(
@@ -86,15 +108,22 @@ class _MyHomePageState extends State<MyHomePage>
                   controller: _tabController,
                   children: [
                     CookiePage(),
+                    CookiePage(),
+                    CookiePage(),
 
                   ]
               )
           )
         ],
       ),
-      floatingActionButton: FloatingActionButton(onPressed: () {},
-        backgroundColor: Color(0xFFF17532),
-        child: Icon(Icons.fastfood),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>Cart()),
+        );
+      },
+        backgroundColor: Color(0xFFEF7532),
+        child: Icon(Icons.add_shopping_cart),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),

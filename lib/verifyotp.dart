@@ -121,7 +121,7 @@ Container buildbottom(BuildContext context) {
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Otp()),
+              MaterialPageRoute(builder: (context) => LoginPage()),
             );
           },
           child: Row(

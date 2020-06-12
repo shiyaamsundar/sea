@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'bottom_bar.dart';
-
+import 'cart.dart';
 class CookieDetail extends StatelessWidget {
   final assetPath, cookieprice, cookiename;
 
@@ -92,7 +92,7 @@ class CookieDetail extends StatelessWidget {
                 height: 50.0,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
-                  color: Color(0xFFF17532)
+                  color: Color(0xFFEF7532)
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -115,9 +115,14 @@ class CookieDetail extends StatelessWidget {
         ]
       ),
 
-      floatingActionButton: FloatingActionButton(onPressed: () {},
-      backgroundColor: Color(0xFFF17532),
-      child: Icon(Icons.fastfood),
+      floatingActionButton: FloatingActionButton(onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) =>Cart()),
+        );
+      },
+      backgroundColor: Color(0xFFEF7532),
+      child: Icon(Icons.add_shopping_cart),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomBar(),

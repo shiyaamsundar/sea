@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'verifyotp.dart';
-
+import 'main.dart';
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -119,7 +119,12 @@ class _LoginPageState extends State<LoginPage> {
             color: blueColor,
             elevation: 10,
             padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyHomePage()),
+              );
+            },
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.min,

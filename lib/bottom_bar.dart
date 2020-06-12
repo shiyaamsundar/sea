@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'user.dart';
+import 'yourorders.dart';
+import 'favourite.dart';
+import 'cart.dart';
+import 'main.dart';
+import 'userdetails/profile.dart';
 class BottomBar extends StatelessWidget {
+  String current="Home";
   @override
   Widget build(BuildContext context) {
     return BottomAppBar(
@@ -27,8 +33,19 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Icon(Icons.home, color: Color(0xFFEF7532)),
-                  Icon(Icons.person_outline, color: Color(0xFF676E79))
+
+                  GestureDetector(
+                      child: Icon(Icons.home, color:  Color(0xFF676E79),),onTap:(){}),
+//                    Navigator.push(
+//                      context,
+//                      MaterialPageRoute(builder: (context) =>MyHomePage()),
+//                    );},),
+                  GestureDetector(child: Icon(Icons.shopping_basket, color: Color(0xFF676E79)),onTap: (){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) =>YourOrders()),
+                    );},),
+
                 ],
               )
             ),
@@ -38,8 +55,18 @@ class BottomBar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Icon(Icons.search, color: Color(0xFF676E79)),
-                  Icon(Icons.shopping_basket, color: Color(0xFF676E79))
+                   GestureDetector(child: Icon(Icons.favorite,color:Color(0xFF676E79) ,),onTap: (){
+                     Navigator.push(
+                       context,
+                       MaterialPageRoute(builder: (context) => Favourite()),
+                     );},),
+
+                  GestureDetector(child: Icon(Icons.person, color: Color(0xFF676E79)),onTap:(){
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Profile()),
+                    );
+                    } ,)
                 ],
               )
             ),
