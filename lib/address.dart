@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:seafood/payment/razor.dart';
 import 'addnewaddress.dart';
+import 'editaddress.dart';
 class Address extends StatefulWidget {
   @override
   _AddressState createState() => _AddressState();
@@ -103,68 +104,52 @@ class _AddressState extends State<Address> {
                             },
                           child: Container(
                             width: 600,
-                            height: 150,
+                            height: 100,
                             child:Column(
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: <Widget>[
                                     SizedBox(height: 15,),
                                       Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        mainAxisAlignment: MainAxisAlignment.start,
                                         crossAxisAlignment: CrossAxisAlignment.start,
                                         children: <Widget>[
-                                          SizedBox(width: 5,),
-                                          Text('Door/Plat Number:'),
+                                          SizedBox(width:30,),
+                                          Text('38/11'),
                                           SizedBox(width: 10,),
-                                          Text('No 38/11'),
-                                          SizedBox(width: 50,),
+                                          Text(',   Abcd Efgh Street'),
+                                          SizedBox(width: 130,),
+                                          GestureDetector(
+                                              child: Icon(Icons.edit_location,size: 20,color: Colors.deepOrangeAccent.withOpacity(.8),),
+                                            onTap: (){
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(builder: (context) => Editaddress(
+
+                                                )),
+                                              );
+                                            },
+                                          ),
                                         ],
                                       ),
-                                    SizedBox(height: 10,),
+                                    SizedBox(height: 5,),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        SizedBox(width: 17,),
-                                        Text('Address Line 1:'),
-                                        SizedBox(width: 10,),
-                                        Text('Abcd Efgh Street'),
-                                        SizedBox(width: 50,),
-                                      ],
-                                    ),
-                                    SizedBox(height: 10,),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        SizedBox(width: 5,),
-                                        Text('Address Line 2:'),
-                                        SizedBox(width: 10,),
+                                        SizedBox(width: 30,),
                                         Text('Abcdefgt'),
-                                        SizedBox(width: 50,),
+                                        SizedBox(width: 10,),
+                                        Text(',  pqwe'),
                                       ],
                                     ),
                                     SizedBox(height: 10,),
                                     Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                      mainAxisAlignment: MainAxisAlignment.start,
                                       crossAxisAlignment: CrossAxisAlignment.start,
                                       children: <Widget>[
-                                        SizedBox(width: 5,),
-                                        Text('City:'),
-                                        SizedBox(width: 10,),
-                                        Text('pqwe'),
-                                        SizedBox(width: 50,),
-                                      ],
-                                    ),
-                                    SizedBox(height: 10,),
-                                    Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      children: <Widget>[
-                                        SizedBox(width: 5,),
-                                        Text('Pincode:-'),
-                                        SizedBox(width: 10,),
+                                        SizedBox(width: 30,),
                                         Text('987456'),
-                                        SizedBox(width: 50,),
+
                                       ],
                                     ),
                                   ],
@@ -197,7 +182,7 @@ class _AddressState extends State<Address> {
                             MaterialPageRoute(builder: (context) => Addaddress()),
                             );
 
-                        }, icon: Icon(Icons.home), label: Text('Add New Address'))
+                        }, icon: Icon(Icons.home,color: Colors.deepOrangeAccent.withOpacity(.8),), label: Text('Add New Address'))
                       ],
                     ),
                   ),

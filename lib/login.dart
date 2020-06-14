@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'verifyotp.dart';
 import 'main.dart';
+import 'forget.dart';
 class LoginPage extends StatefulWidget {
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -49,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                 },
                 child: SingleChildScrollView(
                   padding:
-                  EdgeInsets.only(left: 16, right: 16, top: 50, bottom: 40),
+                  EdgeInsets.only(left: 16, right: 16, top: 30, bottom: 40),
                   child: Column(
                     children: [
                       Text(
@@ -59,7 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(height: 120,),
+                      SizedBox(height: 100,),
                       AnimatedContainer(
                         duration: Duration(milliseconds: 300),
                         curve: Curves.easeInOutBack,
@@ -97,17 +98,20 @@ class _LoginPageState extends State<LoginPage> {
 
   Container buildSingInBottomSection() {
     return Container(
-      margin: EdgeInsets.only(top: 50),
+      margin: EdgeInsets.only(top: 20),
       child: Column(
         children: [
           InkWell(
             onTap: () {
-              print("Forget Password");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Forget()),
+              );
             },
             child: Text(
               "Forget Password ?",
               style: TextStyle(
-                color: blueColor,
+                color: Colors.deepOrangeAccent,
                 decoration: TextDecoration.underline,
               ),
             ),
@@ -116,7 +120,7 @@ class _LoginPageState extends State<LoginPage> {
             height: 25,
           ),
           RaisedButton(
-            color: blueColor,
+            color: Colors.deepOrangeAccent,
             elevation: 10,
             padding: EdgeInsets.symmetric(horizontal: 70, vertical: 12),
             onPressed: () {
@@ -141,7 +145,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 Icon(
                   Icons.arrow_right,
-                  color: blueColor,
+                  color: Colors.deepOrangeAccent,
                 ),
               ],
             ),
@@ -159,7 +163,7 @@ class _LoginPageState extends State<LoginPage> {
                       recognizer: _tapGestureRecognizer,
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        color: blueColor,
+                        color: Colors.deepOrangeAccent,
                         fontWeight: FontWeight.bold,
                       ))
                 ]),
@@ -175,7 +179,7 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         children: [
           RaisedButton(
-            color: blueColor,
+            color: Colors.deepOrangeAccent,
             elevation: 10,
             padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),
             onPressed: () {
@@ -218,7 +222,7 @@ class _LoginPageState extends State<LoginPage> {
                       recognizer: _tapGestureRecognizer,
                       style: TextStyle(
                         decoration: TextDecoration.underline,
-                        color: blueColor,
+                        color: Colors.deepOrangeAccent,
                         fontWeight: FontWeight.bold,
                       ))
                 ]),
@@ -269,7 +273,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           Text(
             labelText,
-            style: TextStyle(color: blueColor, fontSize: 12),
+            style: TextStyle(color: Colors.deepOrangeAccent, fontSize: 12),
           ),
           SizedBox(
             height: 5,
@@ -302,7 +306,7 @@ class _LoginPageState extends State<LoginPage> {
         height: MediaQuery.of(context).size.width,
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-            color: blueColor.withOpacity(0.15),
+            color: Colors.deepOrangeAccent.withOpacity(0.15),
             borderRadius: BorderRadius.circular(
               MediaQuery.of(context).size.width,
             )),
@@ -321,7 +325,7 @@ class _LoginPageState extends State<LoginPage> {
             height: MediaQuery.of(context).size.width,
             width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                color: blueColor,
+                color: Colors.deepOrangeAccent,
                 borderRadius: BorderRadius.circular(
                   MediaQuery.of(context).size.width,
                 )),

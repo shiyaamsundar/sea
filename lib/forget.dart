@@ -1,16 +1,11 @@
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'login.dart';
-
-class Otp extends StatefulWidget {
+class Forget extends StatefulWidget {
   @override
-  _OtpState createState() => _OtpState();
+  _ForgetState createState() => _ForgetState();
 }
 
-class _OtpState extends State<Otp> {
-
-  final blueCol = Color(0XFF5e92f3);
+class _ForgetState extends State<Forget> {
   @override
 
   Widget build(BuildContext context) {
@@ -31,7 +26,7 @@ class _OtpState extends State<Otp> {
                 EdgeInsets.only(left: 16, right: 16, top: 50, bottom: 40),
                 child: Column(
                   children:[
-                    Text("OTP AUTHENTICATION",style: TextStyle(
+                    Text("Forget Password",style: TextStyle(
                         color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold),),
@@ -39,7 +34,7 @@ class _OtpState extends State<Otp> {
                     AnimatedContainer(
                       duration: Duration(milliseconds: 300),
                       curve: Curves.easeInOutBack,
-                      height:140,
+                      height:240,
                       margin: EdgeInsets.only(top: 30),
                       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
                       decoration: BoxDecoration(
@@ -71,10 +66,12 @@ class _OtpState extends State<Otp> {
 Column buildOtpTextFieldSection() {
   return Column(
     children: [
-      buildTextField("OTP", "otp", false),
+      buildTextField("Phone Numer", "phone", false),
       SizedBox(
         height: 30,
       ),
+      buildTextField("OTP", "otp", true),
+
     ],
   );
 }
@@ -187,3 +184,4 @@ Positioned buildBackgroundTopCircle(BuildContext context) {
     ),
   );
 }
+
